@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+
+<StackPane fx:id="mapViewPane" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group7.controllers.views.MapController">
+   <children>
+        <WebView fx:id="webView" minHeight="-1.0" minWidth="-1.0" prefHeight="633.0" prefWidth="458.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="34.0" stroke="TRANSPARENT" strokeType="INSIDE" width="465.0" StackPane.alignment="BOTTOM_LEFT" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="34.0" stroke="TRANSPARENT" strokeType="INSIDE" width="464.0" StackPane.alignment="BOTTOM_RIGHT" />
+   </children>
+</StackPane>

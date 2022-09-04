@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+     HTML and JavaScript code used when making a connection and interacting with the
+     Google mapping API.
+
+     Author: John Elliott
+-->
+<html lang="en">
+<head>
+    <title>Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+<div id="map"></div>
+
+<script>
+    let map;
+    let markers = [];
+    let infoWindow;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 0, lng: 0},
+            zoom: 8,
+            streetViewControl: false,
+            clickableIcons: false,
+        });
+        // GeoCoder is an API that converts an address into a coordinate.
+        // A reasons this has been done to allow for human readability
+        // to where the map is currently centered.
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address': "Chicago, IL, USA"}, function(results, status) {
+            if (status === 'OK') {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+
+    function importData(listOfCoords) {
+        let i;
+        for (i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+
+        }
+
+        for (i = 0; i < listOfCoords.length; i++) {
+            const data = listOfCoords[i];
+            const marker = new google.maps.Marker({
+                position: data.position,
+                map: map,
+            });
+
+            markers[i] = marker;
+
+            infoWindow = new google.maps.InfoWindow();
+
+            marker.addListener("click", () => {
+                infoWindow.setContent(getContentString(data));
+                infoWindow.open({
+                    anchor: marker,
+                    map: map,
+                    shouldFocus: false,
+                });
+            });
+        }
+    }
+
+    function getContentString(data) {
+        return '<div id="content">' +
+            '<div id="siteNotice">' +
+            "</div>" +
+            '<h1 id="firstHeading" class="firstHeading"> Case-Number: ' + data.title + '</h1>' +
+            '<div id="bodyContent">' +
+            '<style>' +
+            'table, th, td {' +
+            '  border:1px solid steelblue;' +
+            '}' +
+            'th { background-color: steelblue}' +
+            'td { background-color: lightsteelblue}' +
+            'table {' +
+            '  width: 100%;' +
+            '  border-collapse: collapse;' +
+            '}' +
+            '</style>' +
+            "<table style='width:100%'>" +
+            "<tr>" +
+            "<th>Date</th>" +
+            "<th>Location Description</th>" +
+            "<th>Primary Description</th>" +
+            "<th>Secondary Description</th>" +
+            "<th>Arrested</th>" +
+            "<th>Domestic</th>" +
+            "</tr>" +
+            "<tr>" +
+            "<td>" + data.description.date + "</td>" +
+            "<td>" + data.description.locDesc + "</td>" +
+            "<td>" + data.description.primDesc + "</td>" +
+            "<td>" + data.description.secDesc + "</td>" +
+            "<td>" + data.description.arrest + "</td>" +
+            "<td>" + data.description.domestic + "</td>" +
+            "</tr>" +
+            "</table>" +
+            "</div>" +
+            "</div>";
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key={API KEY}&callback=initMap"
+        async defer></script>
+</body>
+
+</html>

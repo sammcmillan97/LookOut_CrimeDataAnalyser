@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="rootPane" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="775.0" styleClass="start_screen" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group7.controllers.views.StartScreenController">   
+   <top>
+      <VBox alignment="CENTER" prefHeight="88.0" prefWidth="775.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" styleClass="label" text="Welcome to LookOut">
+               <font>
+                  <Font name="System Bold" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table">
+               <columns>
+                  <TableColumn fx:id="listNames" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="250.0" resizable="false" text="Available Lists" />
+               </columns>
+            </TableView>
+            <VBox prefHeight="250" spacing="15">
+               <HBox spacing="10.0">
+                  <TextField fx:id="newListText" prefHeight="26.0" prefWidth="146.0" promptText="New list name" />
+                  <Button fx:id="newList" minWidth="-Infinity" onAction="#createList" prefHeight="26.0" prefWidth="118.0" text="Create new list" HBox.hgrow="SOMETIMES">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+               <HBox spacing="10.0">
+                  <TextField fx:id="renameListText" disable="true" prefHeight="26.0" prefWidth="147.0" promptText="Updated list name" HBox.hgrow="SOMETIMES" />
+                  <Button fx:id="rename" disable="true" minWidth="-Infinity" onAction="#renameList" prefHeight="26.0" prefWidth="118.0" text="Rename">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+               </HBox>
+               <HBox alignment="CENTER" spacing="10.0">
+                  <Button fx:id="load" disable="true" maxWidth="1.7976931348623157E308" onAction="#loadList" text="Load list" HBox.hgrow="SOMETIMES" />
+                  <Button fx:id="delete" disable="true" maxWidth="1.7976931348623157E308" onAction="#deleteList" text="Delete list" HBox.hgrow="SOMETIMES" />
+                  <VBox.margin>
+                     <Insets top="30.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox />
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+</BorderPane>

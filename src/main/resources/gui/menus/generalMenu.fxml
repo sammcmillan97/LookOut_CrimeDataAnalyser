@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="sideMenu" alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="175.0" spacing="10.0" styleClass="side_menu" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group7.controllers.menus.GeneralMenuController">
+   <children>
+      <HBox alignment="CENTER_RIGHT">
+         <children>
+            <Label text="Menu" underline="true" styleClass="label">
+               <font>
+                  <Font name="System Italic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="searchButton" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="125.0" mnemonicParsing="false" onAction="#toSearch" prefWidth="175.0" text="    Search" />
+      <Button fx:id="filterButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#toFilter" prefWidth="175.0" text="    Filter" />
+      <Button fx:id="importButton" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#newImport" prefWidth="175.0" text="    Import" />
+      <HBox prefWidth="175.0">
+         <Button fx:id="exportButton" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" mnemonicParsing="false" onAction="#exportWithFilter" prefWidth="175.0" text="    Export to..." />
+         <MenuButton fx:id="menuBar" alignment="BASELINE_LEFT">
+            <items>
+               <MenuItem onAction="#exportWithFilter" text="Export With Filter" />
+               <MenuItem onAction="#exportWithoutFilter" text="Export Without Filter" />
+            </items>
+         </MenuButton>
+      </HBox>
+      <Button fx:id="newEntryButton" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="90.0" mnemonicParsing="false" onAction="#toNewEntry" prefWidth="175.0" text="    New Entry" />
+      <Button fx:id="compareButton" alignment="BASELINE_LEFT" layoutX="20.0" layoutY="55.0" mnemonicParsing="false" onAction="#toCompare" prefWidth="175.0" text="    Compare Report" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

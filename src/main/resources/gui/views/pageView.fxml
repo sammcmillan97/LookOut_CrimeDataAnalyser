@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="pageFrame" prefHeight="219.0" prefWidth="452.0" styleClass="label" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group7.controllers.views.PageController">
+   <center>
+      <Pagination fx:id="pages" pageCount="1" prefHeight="161.0" prefWidth="344.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="28.0" prefWidth="329.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="126.0">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Button fx:id="frontButton" mnemonicParsing="false" onAction="#toFront" text="&lt;&lt;" />
+            <TextField fx:id="pageField" alignment="CENTER" onKeyReleased="#gotoPage" prefHeight="25.0" prefWidth="134.0" promptText="Page Number" />
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#toEnd" text="&gt;&gt;" />
+            <Label fx:id="dataTotal" prefHeight="17.0" prefWidth="132.0" text="Data Total: 0">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

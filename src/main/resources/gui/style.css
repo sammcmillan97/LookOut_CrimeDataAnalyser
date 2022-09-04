@@ -1,0 +1,38 @@
+.text-input:error, .date-picker:error {
+    -fx-border-insets: -1px;
+    -fx-border-width: 1px;
+    border-width: 1px;
+    -fx-border-color: red;
+    border-color: red;
+    -fx-border-radius: 3px;
+    border-radius: 3px;
+}
+
+VBox {
+    -fx-alignment: top-center;
+}
+
+.general {
+    -fx-font-family: "Bahnschrift";
+    font-family: "Bahnschrift";
+}
+
+.start_screen {
+    -fx-font-family: "Gill Sans MT";
+    font-family: "Gill Sans MT";
+}
+
+
+.side_menu {
+    -fx-font-family: "Gill Sans MT";
+    font-family: "Gill Sans MT";
+}
+
+.label {
+    -fx-font-family: "Century Gothic";
+    font-family: "Century Gothic";
+}
+
+.left-vbox {
+    -fx-alignment: top-left;
+}

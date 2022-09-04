@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="sideMenu" styleClass="side_menu" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seng202.group7.controllers.menus.CompareController">
+   <children>
+      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="175.0" spacing="10.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+
+                  <Button fx:id="backButton" mnemonicParsing="false" onAction="#toMenu" prefHeight="25.0" prefWidth="37.0" text="&lt;">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+
+                  <Label fx:id="menuText" alignment="CENTER_RIGHT" prefHeight="50" styleClass="label" text="Compare Crime" underline="true" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+
+            <Label alignment="CENTER" prefWidth="175.0" text="Report 1" />
+            <HBox prefHeight="26.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="reportOneText" prefHeight="26.0" prefWidth="134.0" styleClass="report" />
+                  <Button fx:id="addR1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="25.0" mnemonicParsing="false" onAction="#addSelected" prefHeight="26.0" prefWidth="36.0" styleClass="reduced_size" text="&lt;" />
+               </children>
+            </HBox>
+
+
+            <Label alignment="CENTER" prefWidth="175.0" text="Report 2" />
+            <HBox prefHeight="27.0" prefWidth="175.0">
+               <children>
+                  <TextField fx:id="reportTwoText" prefHeight="26.0" prefWidth="127.0" styleClass="report" />
+                  <Button fx:id="addR2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="25.0" mnemonicParsing="false" onAction="#addSelected" styleClass="reduced_size" text="&lt;" />
+               </children>
+            </HBox>
+
+            <Button onAction="#compareReports" prefHeight="25.0" prefWidth="175.0" text="Compare" />
+
+            <Label fx:id="resultText" wrapText="true" />
+         </children>
+      </VBox>
+   </children>
+</VBox>
